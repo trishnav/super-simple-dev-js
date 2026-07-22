@@ -17,3 +17,19 @@
 
   const message = object.message; // is the same as
   const {message} = object;
+
+* To use keyboard = enter on a input for it to run :
+  html : <input
+      class="js-cost-input"
+      placeholder="Cost of order"
+      onkeydown="handleCostKeydown(event)"
+    />
+
+  js:
+  function handleCostKeydown(event) {
+  if (event.key === "Enter") {
+  calculateTotal();
+  }
+  }
+
+* .splice removes a value from an array
