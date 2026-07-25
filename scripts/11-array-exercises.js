@@ -129,8 +129,84 @@ console.log(addArrays(arr, arr2));
 
 // 11k. Create a function countPositive(nums) that takes an array of numbers and returns how many numbers in the array are greater than 0.
 
+/*
+const arr = [0, 10, 20, 30, 40];
+
+function countPositive(nums) {
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > 0) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countPositive(arr));
+*/
+
 // 11l. Create a function minMax(nums) that takes an array of numbers and returns an object with the minimum and maximum numbers in the array. Do this using a loop instead of using Math.min() or Math.max().
+
+/*
+const arr = [4, 5, 6, 9, 10];
+function minMax(nums) {
+  let minNum = nums[0];
+  let maxNum = nums[0];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < minNum) {
+      minNum = nums[i];
+    }
+    if (nums[i] > maxNum) {
+      maxNum = nums[i];
+    }
+  }
+
+  return { minimumNumber: minNum, maximumNumber: maxNum };
+}
+console.log(minMax(arr));
+*/
 
 // 11m. Update exercise 11l so that minMax(nums) also handles an empty array and an array with a single element.
 
+/*
+const arr = [];
+function minMax(nums) {
+  let minNum = nums[0];
+  let maxNum = nums[0];
+
+  if (minNum === undefined) {
+    return null;
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < minNum) {
+      minNum = nums[i];
+    }
+    if (nums[i] > maxNum) {
+      maxNum = nums[i];
+    }
+  }
+
+  return { minimumNumber: minNum, maximumNumber: maxNum };
+}
+console.log(minMax(arr));
+*/
+
 // 11n. Create a function countWords(words) that takes an array of strings and returns an object with how many times each string appears.
+
+/*
+const arr = ["food", "workout", "nap", "code", "food", "sleep"];
+
+function countWords(words) {
+  let count = {};
+  for (let i = 0; i < words.length; i++) {
+    if (count[words[i]] === undefined) {
+      count[words[i]] = 1;
+    } else {
+      count[words[i]]++;
+    }
+  }
+  return count;
+}
+console.log(countWords(arr));
+*/

@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 15px;
+}
+
+.todo-grid,
+.todo-input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-input-grid {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.input-todo-name,
+.js-date-input {
+  font-size: 15px;
+  padding: 6px;
+}
+
+.addTodoBtn {
+  border-radius: 3px;
+  border: none;
+  background-color: hsl(120, 100%, 25%);
+  color: white;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.delTodoBtn {
+  border-radius: 3px;
+  border: none;
+  background-color: darkred;
+  color: white;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
