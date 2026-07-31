@@ -210,3 +210,214 @@ function countWords(words) {
 }
 console.log(countWords(arr));
 */
+
+// ARRAY EXERCISES PT 2 //
+
+// 11o. Create an array of strings, loop over the array, and check if the string `'search'` is inside the array. If it is, `console.log()` the index of `'search'` in the array. If not, `console.log(-1)`.
+
+/*
+const arr = [`google`, `youtube`, `search`, `youtube`];
+let found = false;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] === `search`) {
+    console.log(i);
+    found = true;
+  }
+}
+
+if (found === false) {
+  console.log(-1);
+}
+*/
+
+// 11p. Modify exercise 11o so that if `'search'` appears multiple times in the array, it `console.log()`s the index of the first appearance of `'search'`. Use `break`.
+
+/*
+const arr = [`google`, `youtube`, `search`, `youtube`, `search`];
+let found = false;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] === `search`) {
+    console.log(i);
+    found = true;
+    break;
+  }
+}
+
+if (found === false) {
+  console.log(-1);
+}
+*/
+
+// 11q. Create a function `findIndex(array, word)` that searches an array for a string (the `word` parameter) and returns the index of its first appearance. If the string does not exist in the array, return `-1`.
+
+/*
+const arr = [`sex`, `on`, `the`, `beach`, `word`, `at`, `word`];
+
+function findIndex(array, word) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === word) {
+      return i;
+    }
+  }
+  return -1;
+}
+console.log(findIndex(arr, `word`));
+*/
+
+// 11r. Create a function `removeEgg(foods)` that takes an array of strings and returns a new array where the string `'egg'` is removed.
+
+// const arr = [`chicken`, `soup`, `egg`, `olive oil`];
+
+// function removeEgg(foods) {
+//   let newArray = [];
+//   for (let i = 0; i < foods.length; i++) {
+//     if (foods[i] === `egg`) {
+//       continue;
+//     }
+//     newArray.push(foods[i]);
+//   }
+
+//   return newArray;
+// }
+
+// console.log(removeEgg(arr));
+
+// 11s. Update exercise 11r so that only the first **2** occurrences of `'egg'` are removed from the array.
+
+// const arr = [
+//   `chicken`,
+//   `soup`,
+//   `egg`,
+//   `olive oil`,
+//   `egg`,
+//   `chicken`,
+//   `egg`,
+//   `soup`,
+// ];
+
+// function removeEgg(foods) {
+//   let newArray = [];
+//   let eggsRemoved = 0;
+//   for (let i = 0; i < foods.length; i++) {
+//     if (foods[i] === `egg` && eggsRemoved < 2) {
+//       continue;
+//       eggsRemoved++;
+//     }
+
+//     newArray.push(foods[i]);
+//   }
+//   return newArray;
+// }
+// console.log(removeEgg(arr));
+
+// 11t. Using `.reverse()`, update exercise 11s so that only the last **2** occurrences of `'egg'` are removed from the array.
+
+/*
+const arr = [
+  `chicken`,
+  `soup`,
+  `egg`,
+  `olive oil`,
+  `egg`,
+  `chicken`,
+  `egg`,
+  `soup`,
+];
+
+function removeEgg(foods) {
+  let reversedFoods = foods.reverse(); // flip order first
+  let newArray = [];
+  let eggsRemoved = 0;
+
+  for (let i = 0; i < reversedFoods.length; i++) {
+    if (reversedFoods[i] === `egg` && eggsRemoved < 2) {
+      eggsRemoved++;
+      continue;
+    }
+    newArray.push(reversedFoods[i]);
+  }
+
+  return newArray.reverse();
+}
+console.log(removeEgg(arr));
+
+*/
+
+// 11u. Update exercise 11t so that the function does **not** modify the original array. Create a copy of the array before reversing it.
+
+// let arr = [
+//   `chicken`,
+//   `soup`,
+//   `egg`,
+//   `olive oil`,
+//   `egg`,
+//   `chicken`,
+//   `egg`,
+//   `soup`,
+// ];
+
+// let copy = arr.slice();
+
+// function removeEgg(foods) {
+//   let foodsCopy = foods.slice();
+//   let reversedFoods = foodsCopy.reverse(); // flip order first
+//   let newArray = [];
+//   let eggsRemoved = 0;
+
+//   for (let i = 0; i < reversedFoods.length; i++) {
+//     if (reversedFoods[i] === `egg` && eggsRemoved < 2) {
+//       eggsRemoved++;
+//       continue;
+//     }
+//     newArray.push(reversedFoods[i]);
+//   }
+
+//   return newArray.reverse();
+// }
+// console.log(removeEgg(arr));
+// console.log(arr);
+
+// # Challenge Exercises
+
+// 11v. Create a loop that displays the numbers `1` to `20` in the console. If a number is divisible by `3`, display `"Fizz"` instead of the number. If it is divisible by `5`, display `"Buzz"` instead of the number. If it is divisible by both `3` and `5`, display `"FizzBuzz"` instead.
+
+// for (let i = 1; i <= 20; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log(`fuzzbuzz`);
+//   } else if (i % 3 === 0) {
+//     console.log(`fizz`);
+//   } else if (i % 5 === 0) {
+//     console.log(`buzz`);
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+// 11w. Create a copy of exercise 11q (`findIndex`). Then create a function `unique(array)` that takes an array of strings and returns a new array where each string appears only once (no duplicates). Use your `findIndex()` function in your solution.
+
+// const arr = [`sex`, `on`, `the`, `beach`, `word`, `at`, `word`];
+
+// function findIndex(array, word) {
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === word) {
+//       return i;
+//     }
+//   }
+//   return -1;
+// }
+
+// function unique(array) {
+//   let newArr = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (findIndex(newArr, array[i]) === -1) {
+//       newArr.push(array[i]);
+//     }
+//   }
+//   return newArr;
+// }
+
+// console.log(unique(arr));
+
+// 11x. Create three files: `11x.html`, `11x.css`, and `11x.js`. Copy your Todo List project into these files, update the `<link>` and `<script>` elements to use `11x.css` and `11x.js`, and update the Todo List to use `localStorage` so the list persists after refreshing the page.
