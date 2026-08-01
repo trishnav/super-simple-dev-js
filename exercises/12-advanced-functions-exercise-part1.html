@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <style>
+      * {
+        background-color: white;
+      }
+      .startBtn,
+      .addCart,
+      .messagescss {
+        border-radius: 3px;
+      }
+      .cart {
+        margin-top: 50px;
+      }
+      .GAYSTART {
+        margin-top: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="messagescss" onclick="addMessage()">Add</button>
+    <button class="messagescss" onclick="removeMessage()">Remove</button>
+
+    <div class="GAYSTART">
+      <button class="startBtn" onclick="finished()">Start</button>
+    </div>
+
+    <div class="cart">
+      <button class="addCart" onclick="addedCart()">Add to cart</button>
+    </div>
+
+    <p class="displayProg"></p>
+
+    <script>
+      //   let add = function sum() {
+      //     console.log(2 + 3);
+      //   };
+
+      //   add();
+
+      //   function runTwice(fun) {
+      //     fun();
+      //     fun();
+      //   }
+
+      //   runTwice(add);
+
+      let timeoutid;
+
+      function finished() {
+        document.querySelector(".startBtn").innerHTML = `Loading...`;
+        setTimeout(function () {
+          document.querySelector(".startBtn").innerHTML = `Finished!`;
+        }, 1000);
+      }
+
+      function addedCart() {
+        document.querySelector("p").innerHTML = `Added`;
+
+        clearTimeout(timeoutid);
+        timeoutid = setTimeout(function () {
+          document.querySelector("p").innerHTML = ``;
+        }, 2000);
+      }
+
+      let messages = 2;
+      setInterval(function () {
+        if (document.title === "App") {
+          document.title = `(${messages}) New messages`;
+        } else {
+          document.title = "App";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
